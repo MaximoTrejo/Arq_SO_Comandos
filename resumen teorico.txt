@@ -1,0 +1,119 @@
+1) ¿Qué es Linux o Kernel? Describa brevemente.
+Linux es un sistema operativo de código abierto y desarrollado por una comunidad y 
+el kernel, o núcleo del sistema operativo es el componente responsable de realizar 
+el manejo de las funciones de bajo nivel de la computadora, por ejemplo: 
+ Ubicar un programa en la memoria  Asignar el tiempo de CPU de un programa 
+ Hacer de interfaz entre el software y los dispositivos 
+ Permitir la interacción entre diferentes programas
+
+2) ¿Qué comando sirve para cambiar los permisos de un archivo/directorio?
+El comando chmod nos permitirá cambiar permisos en archivos o directorios.
+Las letras que podemos utilizar y su significado son las siguientes:
+• r representa el permiso de lectura.
+• w representa el permiso de escritura.
+• x representa el permiso de ejecución.
+• X representa el permiso de ejecución (sólo aplica a directorios).
+
+3) ¿Cuáles son las ventajas y desventajas de cloud?
+ventajas 
+*integracion probada de servicios Red
+*prestacion de servicios a nivel mundial
+*portabilidad de la infomacion
+*implementacion mas rapida y con menos riesgos
+*actualizaciones automaticas que no afectan negativamente a los recuersos de TI
+*contribbuye al uso eficiente de la energia
+
+desventajas 
+*la centralizacion de las aplicaciones y el almacenamiento de los datos origina una interdependencia de
+los proveedores de servicios 
+*la disponibilidad de las aplicaicones esta sujeta a la disponibilidad de acceso a internet
+*la confiabilidad de los servicios depende de la "salid "tecnologica y finaciera de los proveedores de servicios en nube
+*la disponibilidad de servicios altamente especializados 
+
+4) ¿Qué ventajas considera que tiene un lenguaje de programación interpretado? Justifique.
+*los lenguajes de programación interpretados no necesitan ser traducidos a código de máquina para ejecutarse.
+
+5) ¿Con qué comando actualizo dentro de la misma version, a otro release el sistema operativo?
+apt upgrade -y(actualiza el SO)
+&&
+apt dist-upgrade -y(paso de version)
+
+apt do-release-upgrade(salto una versioncompleta)
+
+6) ¿Qué significa que un paquete tenga dependencias?
+Las dependencias re refiere a los paquetes que trae cada repositorio.Un paquete puede contener imágenes, 
+librerías, código fuente, documentación, traducciones y desde luego programas.
+
+7) ¿Con qué comando me paso a otra version del sistema operativo en GNU/Linux?
+apt do-release-upgrade(salto una versioncompleta)
+
+8) ¿Como instalo el paquete mc?
+El comando apt-get install instalará el paquete especificado. En el ejemplo, el paquete mc
+(Norton Commander)
+
+9) ¿Qué contiene el directorio /proc?
+Sistema de archivos virtual que documenta sucesos y estados del núcleo. Contiene
+principalmente archivos de texto.
+
+10) ¿Cómo es el comando y sus parámetros para dar de alta la siguiente informacón del usuario?
+Shell: /bin/bash
+El comando para crear un nuevo usuario estándar es useradd -s .Especifica el intérprete de línea de comandos que usará por
+defecto el nuevo usuario. Por ejemplo:
+useradd nuevousuario -s /bin/bash
+
+11) ¿Cuál es la opcion del comando userdel para borrar un usuario y su directorio?
+Para poder borrar un usuario completamente, el comando deberá ser ejecutado utilizando la opción -r.
+userdel -r <usuario>
+
+12) ¿Qué es GNU?
+Todo lo que permite la interacción con el hardware muy parecida a la que existe con Unix, pero sin el Kernel.
+
+--------------------------------------------------
+Los lenguajes de programacion de alto nivel 
+Hace que la tarea del desarrollador sea mas simple ,ya que su sintaxis es mas simple , y un mismo codigo puede ustilizarse bajo distientas 
+arquitecturas de hardware (los lenguajes de programacion de alto nivel son idependientes del hardware)
+
+los leenguajes de bajo nivel 
+Son los principalmene el codigo de maquina y los lengiajes de ensamblado .El codigo de maquina es lo unico que puede ser ejecutado por la computadora y los lengujaes de ensamblado hacen que el trabajo 
+del desarrollador un poco mas simple ,utilizando palabras claves para representar las operaciones .Un componente llamado ensamblador transforma el codigo en lenguaje de emsamblado a codigo maquina 
+.Permiten un contrl absoludto del hardware 
+
+El kernet es el encargado de 
+*ubicar un programa en la memoria 
+*asignar del iempo de CPU de un progrma 
+*permitir la interacion entre distintos programas 
+
+que es un GNU
+Es el conjunto de aplicaciones de base , que utilizan el nuvleo Linux .Este conjunto de aplicaciones se desarrollo con la intencion de generar una alternativa de 
+codigo abierto a Unix.GNU fue desarrolladp principalmente por Richard Stallman
+
+4 libertades del software libre 
+*Analizarlo y Estudiarlo
+*modificarlo
+*distribuirlo
+*distribuir la modificacion
+
+Definiciones
+*El directorio /bin contiene los binarios escenciales para el SO
+-------
+El directorio /etc contiene todas las configuraciones del SO y de las aplicaciones 
+-------
+El comando Grep se utiliza para buscar una expresion regular dentro de un texto 
+-------
+Los pipes son un mecanismo por el cual la salida de un programa se puede evitar como entrada de otros
+programas 
+-------
+El comando Touch crera un archivo si este no existe .Si el archivo existe , cambiara su hora de modificacion y borrara
+su contenido 
+/-----------------
+
+RUTAS RELATIVAS
+./home/usuario1/directorio1/archivo1
+home/usuario1/directoio1/archivo1
+../home/usuario1/directorio1/archivo1
+----------------------------------------
+CARACTERISTICAS HYPERVISOR
+*Hypervisor debera tener una interface totalmente independiente del host
+*hypervisor no debera ofectar el rendimiento del hardware del host
+
+

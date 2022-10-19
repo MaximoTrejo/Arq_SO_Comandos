@@ -1,0 +1,174 @@
+1-	Indique que directorios son dinámicos *
+/media
+/boot
+/home ***
+/dev
+/bin
+
+2-	El comando ls -l, nos muestra. *
+-Los archivos ocultos
+-da error
+-Los archivos en forma de columna con más detalle.***
+-Cambiar de subdirectorio
+
+3-	¿Cuál de estas memorias es más rápida? *
+-Ram
+-SSD
+-Cache L1
+-Cache L3 * 
+-Registro del cpu
+-Memoria Principal
+
+4-	GNU/Linux *
+-Es un kernel.
+-Es una asociación *
+-Es un sistema operativo. *
+-Son las aplicaciones
+-Otro:
+
+5-	¿Cuál es el lenguaje de mayor nivel de abstracción? *
+-JavaScript ***
+-assembler
+-C
+-ninguno
+-todos
+
+6-	Necesito instalar un paquete que descargue *
+-dpkg update
+-apt-get update
+-dpkg paquete
+-apt-get upgrade
+-apt-get install paquete ****
+-apt-get dist-upgrade
+-Otro:
+
+7-	Que es un Hipervisor tipo 1 *
+-Es el que se ejecuta sobre el Hardware **** 
+-Es el que necesita un sistema operativo
+-Es aquel que se instala primero
+-todos los anteriores
+
+
+8-	Si tenemos un sistema operativo de 32 bits, podemos ejecutar una virtual de 64 *
+-Dependiendo del micro
+-Si, solo se configura el hipervisor
+-NO *****
+-Otro:
+
+9-	Que es Windows *
+-Es un kernel.
+-Es una asociación
+-Es un sistema operativo. ***
+-Son las aplicaciones
+-Otro:
+
+10-	En que directorio encuentro la información de las unidades *
+/dev
+/media
+/home
+/etc
+
+11-	Necesito instalar los paquetes actualizados *
+-dpkg update
+-apt-get update
+-dpkg paquete
+-apt-get upgrade ***
+-apt-get install paquete
+-apt-get dist-upgrade
+-Otro:
+
+12-	Necesito descargar los paquetes actualizados *
+-dpkg update
+-apt-get update ***
+-dpkg paquete
+-apt-get upgrade
+-apt-get install paquete
+-apt-get dist-upgrade
+-Otro:
+
+13-	Cuáles de los siguientes son lenguajes de programación compilados ? *
+-JavaScript 
+-C **
+-PHP
+-C# Sharp **
+-ninguno
+-todos
+
+14-	Cuando se realiza la instalación de una distribución de GNU/Linux, que particiones se requiere? *
+-La partición del sistema operativo.
+-La partición del área de intercambio.
+-no necesita * creo
+
+15-	¿Cuáles de estas memorias se pueden ampliar sin necesidad de cambiar la arquitectura del CPU? *
+-Ram **
+-SSD **
+-Cache L1
+-Cache L3
+-Registro del cpu
+-Memoria Principal ** es la ram
+
+16-	Indique que directorios son estáticos *
+/media
+/boot ***
+/home
+/dev
+/bin ***
+
+17-	¿Cuáles de los siguientes son lenguajes de programación interpretados? *
+-JavaScript **
+-C
+-PHP **
+-C# Sharp
+-ninguno
+-todos
+
+18-	¿Qué es el Kernel Linux? *
+-Es un sistema operativo 
+-Es una asociación de software libre
+-Es lo creado por linus torvals
+-Es una Distro
+-Otro: 
+
+
+19-	En que directorio encuentro los puntos de montaje de las unidades *
+/dev
+/media ***
+/home
+/etc
+
+
+20-	El comando ls -6, nos muestra. *
+-Los archivos ocultos.
+-da error ***
+-Los archivo en forma de columna con más detalle.
+-Cambiar de subdirectorio
+-Muestra los primeros 6 elementos
+
+21-	El comando cat. *
+-Permite concatenar el contenido de los archivos. **
+-Permite ver el contenido de los archivos. ** 
+-Permite borrar archivos.
+-Permite copiar archivos
+-Otro:
+
+22-	Que es GNU *
+-Es un kernel. 
+-Es una asociación
+-Es un sistema operativo. **
+-Son las aplicaciones
+-Otro:
+
+
+23-	El comando cp. *
+-Permite ver el contenido de los archivos.
+-Permite borrar archivos.
+-Permite copiar archivos **
+-Otro:
+
+
+24-	El comando man. *
+-permite ver los datos del usuario
+-permite renombrar archivos
+-Permite ver el historial
+-Permite ver el manual **
+-Otro:

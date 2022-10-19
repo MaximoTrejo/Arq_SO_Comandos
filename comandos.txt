@@ -1,0 +1,194 @@
+=======================================CLASE 3================================================
+ls -a (si no tienen muchas cosas , lista todos los archivos ocultos,en forma de columna)
+(los archivos que tienen . adelante son archivos ocultos, los archivos verdes  son archivos ejecutables y los azules son directorios)
+ls (muestra todo , menos archivos ocultos)
+ls--all (palabra completa)
+ls -l(muestra lo mismo pero mas detallado)
+
+
+d | rwx | r-x | r-x
+d(directorio)
+-(archivo)
+b(dispositivos de bloques(almacenamiento))
+c(dispositivos de caracter (terminales , impresoras))
+l(enlaces directos)
+
+usuario(rwx)
+r(lectura)
+w(escritura)
+x(ejecutable)
+
+grupo(r-x) si esta el guion el permiso no lo tiene 
+en este ejemplo tiene permisos de lectura y ejecucion porque el - me marca que no tiene permiso de escritura
+
+otros(r-x)
+
+--------------------------------------------
+
+sudo su -cd /vBoxLinuxAddition.sh (extensiones MIRAR)
+
+--------------------------------------------
+man man (ayuda de linux )
+
+apropos (me trae los comandos(busca los comandos que se refieran a lo que busque))
+
+=======================================CLASE 4================================================
+/proc (directorio ,contiene toda la informacion de los procesos)
+
+pwd(me indica el directorio en donde estoy parado)
+
+cat, less ,more (puede ver los contenidos de los archivos)
+
+cd (nos lleva al home , a nuestro propio directorio)
+
+whoami(devuelve el nombre de usuario de nuestra maquina )
+
+cp (copiar archivos )
+ejemplo 
+cp /etc/hosts .
+
+apropos (busca por nombre del comando o la descripcion)
+
+man -k (es igual que el apropos)
+
+mandb (actualiza la base)
+
+id (muestra los grupos que pertenece el usuario)
+
+bc (operaciones matematicas , se sale del programa (quit))
+ejemplo
+bc <<< 2+4
+
+cat << (palabra que vos quieras)(concatena todo hasta que pongas la palabra del principio)
+ejemplo
+cat << FIN > salida.txt (lo redireccinamos al archivo salida) (con un > pisa el archivo , con >> agrega al archivo)
+
+cat < (archivo)(muestra el archivo) es lo mismo cat (nombre del archivo)
+
+echo (nuestra por pantalla)
+
+more (muestra archivos por pantalla)
+
+grep(filtro por una linea , busco por una palabra que no este en las demas)
+
+awk(delimita columnas)
+ejemplo
+awk '{print $9 }' (le dice que muestre la columna 9)
+
+ip route ()
+ip route |grep default | awk '{print "ping " $3 }'  |/bin/bash
+
+=======================================CLASE 5================================================
+Pasos crear un disco duro nuevo
+
+vas a la interface de la maquina virtual
+configuracion
+almacenamiento
+controlador SATA , anadir un disco
+crear
+siguiente -siguiente- elegis el espacio - crear 
+despues seleccionas el disco creado y listo
+
+------
+sudo su -(volverse root)
+
+dmesg | more (da informacion del buteo, tamanio de memoria, todos los mensajes del kernel )
+
+dmesg | grep sd (filtro los sd)
+sda disco viejo
+sdb disco nuevo
+
+fdisk -l(listar todos los dispositivos de bloque con sus particiones )
+
+lsblk(muestra lo mismo que el fdisk -l , la diferencia es que muestra los puntos de montaje)
+
+fdisk /dev/sdb 
+menu 
+apretamos la m (ayuda)
+n (crear particion)
+d(eliminar)
+p(imprimir la tabla de particiones)
+t(cambiar el tipo de particion)
+
+particionar disco
+1: n 
+2: p(primaria) o e (extendida)(para la extendida es todo siguiente)
+3: enter
+4: +1M
+5 :p (para revisar particion)
+6: w
+
+ejemplo
+/dev/sdb1 
+
+(si hago una particion extendida , no puedo volver a hacer una primaria)
+
+las particiones logicas (empieza del 5 )
+ejemplo 
+sdb5
+
+formatear la particion(aplicar fat sistem a la particion de un disco rigido)
+mkfs.ext4(recibe la particion que queremos formatear)
+ejemplo
+mkfs.ext4/dev/sdb1
+
+
+Montar disco
+mount (informacion de como esta montado el disco)
+
+mount | grep sdb(filtrar los discos)
+df -h /mnt(otra manera de ver el disco)(si no esta montado no va a aparecer)
+
+mount /dev/sdb1 /mnt
+comando | donde esta el archivo | donde lo quiero montar
+
+lsblk(para ver los cambios)
+
+**Crear una estructura de directorio**
+mkdir 28-09-2022/papa/hijos{1..3}-p
+tree 28-09-2022
+
+Error (instalar TREE)
+sudo apt install tree
+
+mkdirt -p 28-09-2022/mama/{amante,hijo}/perro 
+
+rn-rf 28-09-2022(r [recursivo] f [fuerza])
+
+ejemplos
+mkdirt -p 28-09-2022/tio/{sobrino/peluche,sobrino}/piojos
+
+forma de ejecutar comandos
+history 
+!(la linea del comando)
+
+**paquetes(se ejecuta como root)
+
+apt update (altualiza la base de datos de nuestro equipo (no actualiza el SO)) y (act la lista de paquetes)
+&&
+apt upgrade -y(actualiza el SO)
+&&
+apt dist-upgrade -y(paso de version)
+
+apt do-release-upgrade(salto una versioncompleta)
+ejemplo
+v10 -- v12
+
+=======================================CLASE 6================================================
+
+usuario /etc/apt/sources.list (donde podemos actualizar los paquetes)
+
+usuarios
+etc/passwd (contiene informacion de usuario (id , nombre, gid(identificador de grupo), gecos(descripcion), home (/home/nom_usuario),shell(shell del usuario), shell)
+
+/etc/shadow (password encriptada())
+====================================EXTRAS
+uname -a()
+
+
+--------------------------------
+++la lista de directorios dentro
+
+ls -l /opt > archivo1.txt
+o 
+ls -l /opt > desarrollo/imagenes/backup/archivo1.txt

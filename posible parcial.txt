@@ -1,0 +1,101 @@
+posibles comandos para el  parcial
+
+*ser root 
+sudo su - (no usar)
+
+lsblk (ver los discos creados)o df
+
+fdisk /dev/(disco)
+
+particionar disco
+1: n 
+2: p(primaria) o e (extendida)(para la extendida es todo siguiente)
+3: enter
+4: +1Mf disk 
+5 :p (para revisar particion)
+6: w
+
+formatear
+mkfs.ext4 /dev/(nombre des disco)
+
+montar(antes de montar se formatea) 
+mount /dev/particion /lugar
+
+crear carpeta (si el ejercicio dice en el home creale una carpeta antes de montarlo)
+mkdir /home/carpeta
+
+crear carpetas 
+mkdir -p 
+ejemplo 
+mkdir -p pandemia/{provincia/{fotos,informes},informes/{fotos,informes}}
+
+
+mkdir -p Ejercicio_D/{uba/clase{1..5},utnfra/clase{1..5}}
+
+pandemia 
+	informes
+		fotos
+		informes
+	provincia
+		fotos
+		informes
+
+ejemplo2
+mkdir -p desarrollo/{fuentes/backuo,imagenes/backup}  testing/{fuentes/backup,imagenes/backup,finales/backup}
+
+testing
+	finales	
+		backup
+	fuentes
+		backup
+	imagenes
+		backup
+
+desarrollo 
+	fuentes
+		backup
+	imagenes
+		backup
+tree (nombre de la carpeta) (para ver el contenido)
+rm -r pandemia (borrar el directorio)
+------------------------------------------------------
+
+crear un arhico y guardarlo en un lugar especifico
+cat > /home/desarrollo/fuentes/archivo.txt  (si no le pones la ruta te lo crea en el home)
+
+borrar archivo 
+rm /home/desarrollo/fuentes/archivo.txt (si el archivo no tiene ruta , solo pone el nombre del archivo)
+
+concatenar archivos (informa la situación de los disco y sus particiones)
+(pones el comando que quieras  y te lo agrega en el archivo (osea la informacion))
+lsblk > /home/desarrollo/fuentes/archivo.txt (corre el comando en el archivo)
+
+fdisk -l(otro comando para ver los discos y particiones)
+
+ver archivo 
+cat /home/desarrollo/fuentes/archivo.txt 
+
+si te pide mas de 1na informacion 
+(comando)                       (comando)
+free -h > (ruta del archivo) && lsblk >> (ruta) 
+-------------------------------------------------------------
+comandos para ver los datos del sistema operativo
+lsb_release -a (descripcion extensa)
+lsb_release -d (descripcion corta)
+uname -a (lo mismo que lsb)
+
+--------------------------------------------------------------
+comandos para listar
+ls -a (si no tienen muchas cosas , lista todos los archivos ocultos,en forma de columna)
+(los archivos que tienen . adelante son archivos ocultos, los archivos verdes  son archivos ejecutables y los azules son directorios)
+ls (muestra todo , menos archivos ocultos)
+ls--all (palabra completa)
+ls -l(muestra lo mismo pero mas detallado)
+
+
+------------------------
+MAS COMANDOS
+https://www.investigacion.frc.utn.edu.ar/labsis/publicaciones/apunte_linux/mmad.html
+ 
+
+
