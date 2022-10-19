@@ -78,6 +78,12 @@ cat /home/desarrollo/fuentes/archivo.txt
 si te pide mas de 1na informacion 
 (comando)                       (comando)
 free -h > (ruta del archivo) && lsblk >> (ruta) 
+users (veo el usuario)
+echo -n (titulo) (si le saco la -n la informacion se escribe abajo)
+
+
+free -m
+lscpu | grep loquebusques > archivito.txt (esto es para saber la marca ,modelo.frecuencia,procesadores )
 -------------------------------------------------------------
 comandos para ver los datos del sistema operativo
 lsb_release -a (descripcion extensa)
