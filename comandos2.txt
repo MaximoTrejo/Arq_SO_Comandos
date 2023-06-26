@@ -1,0 +1,169 @@
+lsblk
+
+fdisk /dev/sdc
+1-n
+2-p(primaria) o e (extendida)
+3-enter
+4-enter
+5-(tama;o de la particion que necesitas)
+6-p(para revisar la particion) 
+
+
+LMV 
+1-t
+2-8e
+
+Limpiar particiones 
+wipefs -a /dev/sdb1
+
+crear pv
+pvcreate /dev/(nombre de la particion)
+
+crear vg (ver vg vgs)
+vgcreate vg_1 /dev/(nombre de la particion)
+vgremove (nombre del vg)
+vgextend (nombre del vg) /dev/(particion)
+
+crear lv (ver lv lvs)
+lvcreate -L +5GB (nombre del vg) -n (nombre del lv que necesitamos)
+
+fomatear lv(obligatorio)
+mkfs.ext4 /dev/mapper/(nombre del vg)-(nombre del lv)
+
+
+crear directorios
+ mkdir -p SegundoParcial/{peliculas,fotos,archivos}
+
+SegundoParcial
+ 	peliculas
+ 	fotos
+ 	archivos
+
+montar lv
+mount /dev/(nombre del vg)/(nombre del lv) (ruta donde queres montar el lv)
+
+----------------------------
+5- crear usuarios en bin/bash
+
+touch crear_usuario.sh  //crea achivo
+vim crear_usuario.sh
+
+i(insertar - enter)
+
+#!/bin/bash
+for number in {1..5}
+do
+sudo useradd -c "Usuario de 2do Parcial" -m -s /bin/bash UsuarioParcial_$number
+done
+
+esc
+:wq
+enter
+
+ver usuarios (cut -d: -f1 /etc/passwd)
+
+
+crear grupos 
+groupadd (nombre del grupo)
+
+agregar usuarios al grupo
+usermod -a -G (nombre del grupo) (nombre del usuario)
+
+ver permisos y usuarios que pertenecen al grupo
+grep '^<nombre_grupo>:' /etc/group | cut -d: -f4
+---------------------------------------
+7-
+setear contraseña 
+1-passwd (nombre del usuario)
+2-contraseña
+
+darles permisos al usaurio
+sudo chown (nombre del usaurio):(nombre del grupo) (ruta)
+
+entrar al usuario
+su (nombre del usuario)
+
+cambiar permisos a un archivo
+chmod 777 (nombre del archivo)--todos los permisos
+
+--------------------------------------------------------
+8)extender el lv 
+lvextend -L +512M /dev/mapper/(nombre del vg)-(nombre del lv)
+resize2fs /dev/mapper/(nombre del vg)-(nombre del lv)
+
+ver el tamaño 
+df -h
+
+--------------------------------------------------------
+9-docker
+
+https://docs.docker.com/engine/install/ubuntu/
+
+
+error demonio 
+ver en que grupo estoy 
+cat /etc/group | grep maxi 
+
+agregar
+sudo usermod -a -G docker maxi
+
+ejecutar el achivo .sh
+bash (nombre del archivo o su ruta + nombre)
+
+para ver si esta levantado el docker
+docker ps
+
+para cambiar el puerto cambias el primer 85
+y en el navegador es 
+localhost:85
+
+para modificar los index 
+vim (nombre del archivo)
+
+
+para mover un archivo a una carpeta es 
+mv (nombre del archivo) (ruta de la carpeta)
+
+1-crear el dockerfile
+touch dockerfile
+(para modificarlo usas vim)
+FROM nginx
+COPY html(carpeta) /usr/share/nginx/html(queda igual)
+
+2-crear el index.html(tambien se edita con vim)
+<h1>MaximoTrejo<h1>
+
+3-correr el docker build
+docker build -t test-nginx .
+
+4-correr el docker run 
+docker run -d -p 85:80 test-nginx 
+
+
+5-leventar el repo
+
+*docker login
+
+*docker tag (nombre de la imagen)(lo sacas del build)  (nombre de usuario)/(nombre del repositorio)
+-ejemplo
+docker tag test-nginx maximot/utn
+
+*docker push (nombre de usuario)/(repo)
+
+
+Parar un docker 
+docker stop (id)(lo sacas con el comando docker ps)
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
